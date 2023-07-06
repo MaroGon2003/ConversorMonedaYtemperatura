@@ -15,7 +15,6 @@ public class Moneda {
        - Convertir de la moneda de tu país  a Yen Japonés
        - Convertir de la moneda de tu país  a Won sul-coreano */
 	
-	
 	public double pesoDolar(double valor) {
 		return valor * dolar;
 	}

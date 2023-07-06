@@ -7,6 +7,7 @@ public class Principal {
 	public static void main(String[] args) {
 
 		Moneda objM = new Moneda();
+		Temperatura objT = new Temperatura();
 
 		Object[] Conversor = { "Conversor de moneda", "Conversor de temperatura", "salir" };
 
@@ -29,9 +30,14 @@ public class Principal {
 
 					Object[] monedas = { "Peso", "Dolar", "Euro", "Libras esterlina", "Yen Japonés",
 							"Won sul-coreano" };
+					Object[] monedas2 = {"Dolar", "Euro", "Libras esterlina", "Yen Japonés"};
 
 					Object opcM1 = JOptionPane.showInputDialog(null, "Seleccione la moneda ingresada",
 							"Seleccione una opción", JOptionPane.QUESTION_MESSAGE, null, monedas, monedas[5]);
+					
+					if (opcM1 == null) {
+						break;
+					}
 
 					Object opcM2 = "";
 
@@ -43,7 +49,11 @@ public class Principal {
 								"Seleccione una opción", JOptionPane.QUESTION_MESSAGE, null, Monedas, Monedas[0]);
 					} else {
 						opcM2 = JOptionPane.showInputDialog(null, "Seleccione una opcion de conversion",
-								"Seleccione una opción", JOptionPane.QUESTION_MESSAGE, null, monedas, monedas[5]);
+								"Seleccione una opción", JOptionPane.QUESTION_MESSAGE, null, monedas2, monedas2[0]);
+					}
+					
+					if (opcM2 == null) {
+						break;
 					}
 
 					if (opcM1 == opcM2) { // por si se selecciona peso dos veces
@@ -117,44 +127,80 @@ public class Principal {
 
 			case "Conversor de temperatura":
 
+				Object opcM1;
 				do {
 
 					valor = Validaciones.leerReal("Ingrese el valor de la temperatura que desaea convertir");
+					
+					if(valor == 0) {
+						break;
+					}
 
 					Object[] Temperaturas = { "Grados Fahrenheit", "Grados Celsius", "Grados Kelvin" };
-					Object[] temperaturaSinKelvin = { "Grados Fahrenheit", "Grados Celsius"};
+					Object[] temperaturaSinKelvin = { "Grados Fahrenheit", "Grados Celsius" };
 					Object[] temperaturaSinCelsius = { "Grados Fahrenheit", "Grados Kelvin" };
-					Object[] temperaturaSinFahrenheit = {"Grados Celsius", "Grados Kelvin" };
+					Object[] temperaturaSinFahrenheit = { "Grados Celsius", "Grados Kelvin" };
 
-					Object opcM1 = JOptionPane.showInputDialog(null, "Seleccione la temperatura ingresada",
-							"Seleccione una opción", JOptionPane.QUESTION_MESSAGE, null, Temperaturas,null);
+					opcM1 = JOptionPane.showInputDialog(null, "Seleccione la temperatura ingresada",
+							"Seleccione una opción", JOptionPane.QUESTION_MESSAGE, null, Temperaturas, null);
+
+					if (opcM1 == null) {
+						break;
+					}
 
 					Object opcM2 = "";
 
 					if (opcM1 == "Grados Kelvin") {
 
 						opcM2 = JOptionPane.showInputDialog(null, "Seleccione una opcion de conversion",
-								"Seleccione una opción", JOptionPane.QUESTION_MESSAGE, null, temperaturaSinKelvin,null);
-						
-					} else if(opcM1 == "Grados Celsius"){
-						
+								"Seleccione una opción", JOptionPane.QUESTION_MESSAGE, null, temperaturaSinKelvin,
+								null);
+
+					} else if (opcM1 == "Grados Celsius") {
+
 						opcM2 = JOptionPane.showInputDialog(null, "Seleccione una opcion de conversion",
-								"Seleccione una opción", JOptionPane.QUESTION_MESSAGE, null, temperaturaSinCelsius,null);
-						
-					}else {
-						
+								"Seleccione una opción", JOptionPane.QUESTION_MESSAGE, null, temperaturaSinCelsius,
+								null);
+
+					} else {
+
 						opcM2 = JOptionPane.showInputDialog(null, "Seleccione una opcion de conversion",
-								"Seleccione una opción", JOptionPane.QUESTION_MESSAGE, null, temperaturaSinFahrenheit,null);
-						
+								"Seleccione una opción", JOptionPane.QUESTION_MESSAGE, null, temperaturaSinFahrenheit,
+								null);
+
 					}
 					
-					//---------------codigo en progreso ----------------------------------------------------------//
+					if (opcM2 == null) {
+						break;
+					}
+
 
 					switch (opcM1 + " a " + opcM2) {
 
-					case "Peso a Dolar":
+					case "Grados Kelvin a Grados Fahrenheit":
+						JOptionPane.showMessageDialog(null, String.format("%.2f", objT.kelvinFahrenheit(valor)) + " °F");
+						break;
+
+					case "Grados Celsius a Grados Fahrenheit":
 						JOptionPane.showMessageDialog(null,
-								"$ " + String.format("%.2f", objM.pesoDolar(valor)) + "  Dolares");
+								String.format("%.2f", objT.celsiusFahrenheit(valor)) + " °F");
+						break;
+
+					case "Grados Celsius a Grados Kelvin":
+						JOptionPane.showMessageDialog(null, String.format("%.2f", objT.celsiusKelvin(valor)) + " K");
+						break;
+
+					case "Grados Fahrenheit a Grados Kelvin":
+						JOptionPane.showMessageDialog(null, String.format("%.2f", objT.fahrenheitKelvin(valor)) + " K");
+						break;
+
+					case "Grados Fahrenheit a Grados Celsius":
+						JOptionPane.showMessageDialog(null,
+								String.format("%.2f", objT.fahrenheitCelsius(valor)) + " °C");
+						break;
+
+					case "Grados Kelvin a Grados Celsius":
+						JOptionPane.showMessageDialog(null, String.format("%.2f", objT.kelvinCelsius(valor)) + " °C");
 						break;
 
 					} // fin opc de monedas
@@ -164,8 +210,8 @@ public class Principal {
 
 				} while (resp == JOptionPane.YES_OPTION);
 
-				break; // fin conversor de temperatura -----------------------------------------------------------------//
-
+				break; // fin conversor de temperatura
+						
 			}// fin del menu principal
 
 		} while (conv != "salir");
