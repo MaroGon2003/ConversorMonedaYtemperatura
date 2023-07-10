@@ -12,7 +12,6 @@
 
 ### Requisitos Proyecto:
 
-
 El convertidor de moneda debe:
 
            - Convertir de la moneda de tu país a Dólar
@@ -29,4 +28,15 @@ Recordando que también debe ser posible convertir inversamente, es decir:
            - Convertir de Yen Japonés a la moneda de tu país
            - Convertir de Won sul-coreano a la moneda de tu 
 
-***Nota: Mi pais es Colombia por lo cual mi moneda local es el peso Colobiano(COP)***.
+*Nota: Mi pais es Colombia por lo cual mi moneda local es el peso Colobiano(COP)*.
+
+
+
+## Imagenes del proyecto:
+
+
+![](https://github.com/MaroGon2003/ConversorMonedaYtemperatura/blob/master/imgReadme/Captura%20de%20pantalla%20(2).png)
+
+![](https://github.com/MaroGon2003/ConversorMonedaYtemperatura/blob/master/imgReadme/Captura%20de%20pantalla%20(4).png)
+
+![](https://github.com/MaroGon2003/ConversorMonedaYtemperatura/blob/master/imgReadme/Captura%20de%20pantalla%20(5).png)
