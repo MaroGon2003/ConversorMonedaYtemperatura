@@ -28,3 +28,5 @@ Recordando que también debe ser posible convertir inversamente, es decir:
            - Convertir de Libras Esterlinas a la moneda de tu país
            - Convertir de Yen Japonés a la moneda de tu país
            - Convertir de Won sul-coreano a la moneda de tu 
+
+***Nota: Mi pais es Colombia por lo cual mi moneda local es el peso Colobiano(COP)***.
