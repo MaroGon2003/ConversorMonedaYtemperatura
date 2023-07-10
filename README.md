@@ -9,3 +9,7 @@
          - Interfaz gráfica desarrollada con Javax.Swing.
          - Uso de Programación Orientada a Objetos.
          - Cálculos de conversión realizados y manejo de cifras monetarias con la clase BigDecimal.
+
+
+### Descarga proyecto: (zip)
+https://github.com/MaroGon2003/ConversorMonedaYtemperatura/archive/refs/heads/master.zip
